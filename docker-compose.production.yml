@@ -17,7 +17,7 @@ services:
     env_file: .env
     volumes:
       - static:/static/
-      - media:/app/media/
+      - media:/media/
 
   frontend:
     image: marty1107/kittygram_frontend
@@ -25,7 +25,7 @@ services:
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
-      
+
   gateway:
     image: marty1107/kittygram_gateway
     env_file: .env
@@ -33,4 +33,4 @@ services:
       - 9000:80
     volumes:
       - static:/static
-      - media:/app/media/
+      - media:/media/
